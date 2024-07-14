@@ -66,7 +66,7 @@ impl Engine for WamrEngine {
         log::info!("Create a WASI context");
 
         let wasi_ctx = WasiCtxBuilder::new()
-        .set_pre_open_path(vec!["/"], vec!["/"])
+        .set_pre_open_path(vec!["/"], vec![])
         .set_env_vars(envs.iter().map(String::as_str).collect())
         .build();
 
